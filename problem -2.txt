@@ -1,0 +1,17 @@
+def find_runner_up(scores):
+    # Convert scores to a set to remove duplicates and sort in descending order
+    unique_scores = list(set(scores))
+    unique_scores.sort(reverse=True)
+    
+    # The runner-up score will be the second highest, so return the second item
+    return unique_scores[1] if len(unique_scores) > 1 else None
+
+# Example usage
+scores = [5,5,4,6]
+runner_up = find_runner_up(scores)
+
+if runner_up is not None:
+    print("Runner-up score:", runner_up)
+else:
+    print("Not enough scores to determine runner-up.")
+
